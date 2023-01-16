@@ -1,0 +1,59 @@
+/* NAVIGATION TODO: CLEAN UP */
+
+.navbar {
+	border-bottom: solid 1px $primary-color;
+	font-family: $default-nav-font-family;
+
+	& * {
+		color: $primary-color;
+		font-size: 1.4rem;
+	}
+}
+
+.navbar-dark .navbar-nav .nav-link, .navbar-dark {
+	color: unset;
+}
+
+.nav-link:hover {
+	color: $default-font-color !important; /* Overwrite bootstrap !important */
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.navbar-brand {
+	font-size: 1.7rem;
+	color: $primary-color;
+
+	&:hover {
+		font-size: 1.7rem;
+		color: $primary-color;
+	}
+}
+
+.dropdown-menu {
+	background-color: $secondary-color;
+	font-size: 1rem;
+	padding: 0;
+	border-bottom: 2px solid $primary-color;
+
+	&:active {
+		//background-color: $default-font-color;
+	}
+}
+
+.dropdown-item{
+	&:active {
+		background-color: $secondary-color;
+	}
+}
+
+.carousel-item {
+	h1, h2 {
+		text-align: center;
+	}
+
+	img {
+		aspect-ratio: 16 / 9;
+		width: 100%;
+	}
+}

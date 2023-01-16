@@ -1,0 +1,39 @@
+body {
+	margin-bottom: 1rem;
+	background: linear-gradient(0deg, rgba(12, 11, 38, 1) 0%, rgba(102, 2, 60, 1) 100%) fixed;
+	font-family: $default-font-family;
+	color: $default-font-color;
+}
+
+a {
+	text-decoration: none;
+	color: $default-font-color;
+
+	&:hover {
+		color: $default-font-color;
+	}
+}
+
+h1, h2, h3, h4 {
+	border-bottom: 1px solid $default-border-color;
+	padding-bottom: 0.8rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+img {
+	border-radius: $default-border-radius-small;
+	max-width: 100%;
+}
+
+footer {
+
+	width: 100%;
+	line-height: 60px;
+	border-top: solid 1px $primary-color;
+
+	p {
+		margin-bottom: unset;
+		text-align: center;
+	}
+}

@@ -1,0 +1,130 @@
+@import "./variables.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./custom-blocks.scss";
+@import "./components.scss";
+@import "./wp.scss";
+@import "./overrides.scss";
+@import "./bootstrap-overrides";
+
+.annotation {
+	font-size: 0.8rem;
+	opacity: .8;
+}
+
+/* TABLES */
+
+.table {
+	color: white;
+	border-color: $default-clickable-hover-color;
+	font-size: 1.2rem;
+	margin-top: 1rem;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+	background-color: rgba(0,0,0,.12);
+	color: white;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+	color: white;
+}
+
+.table-bordered td,
+.table-bordered th {
+	border: 1px solid $default-clickable-hover-color;
+}
+
+.clickable {
+	&:hover {
+		cursor: pointer;
+		background-color: $default-clickable-hover-color !important; /* Overwrite bootstrap !important */
+	}
+}
+
+/* Third-Party */
+
+.youtube-video {
+	text-align: center;
+	margin-top: 2rem;
+}
+
+/* Posts */
+
+#blogpost {
+	img {
+		display: block;
+		margin: 0 auto 1rem auto;
+	}
+}
+
+/* Player Introduction */
+
+.member__item {
+	align-items: center;
+	position: relative;
+	display: flex;
+	flex-wrap: nowrap;
+	margin: 1rem;
+	background-color: $transparent-blue;
+	border-radius: $default-border-radius-small;
+	padding: 1rem;
+
+	img {
+		max-width: 12rem;
+		max-height: 18rem;
+	}
+
+	&__content {
+		margin: 2rem;
+	}
+
+	&__social-icons {
+		position: absolute;
+		right: 1rem;
+		top: 1rem;
+
+		a:not(:last-child) {
+			margin-right: 1rem;
+		}
+
+		a img {
+			max-width: 2rem;
+		}
+	}
+}
+
+.mod__item {
+	background-color: $transparent-blue;
+	margin: 2rem;
+	border-radius: $default-border-radius-small;
+	display: flex;
+	flex-flow: wrap;
+
+	img {
+		aspect-ratio: 16/9;
+		width: 200px;
+		height: 100%;
+		margin: 1rem;
+		object-fit: cover;
+	}
+
+
+	&__content {
+		width: 80%;
+		margin-top: 1rem;
+
+		&__heading {
+			font-size: 1.3em;
+			font-weight: bold;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
