@@ -105,12 +105,11 @@ class TwitchLoader {
 
 		if(empty($accessToken)) return false;
 
-		$request = Requests::post($this->validationUrl, array(
-			'Authorization' => 'Bearer ' . $_COOKIE["twitch_access_token"],
+		$request = Requests::get($this->validationUrl, array(
+			'Authorization' => 'Bearer ' . $accessToken,
 			'Content-Type' => 'application/json'
 		));
-
-		if(!$request->success) return true;
+		if($request->success) return true;
 		return false;
 	}
 
