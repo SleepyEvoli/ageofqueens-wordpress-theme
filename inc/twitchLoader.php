@@ -2,29 +2,41 @@
 
 class TwitchLoader {
 
-	public string $accessToken = '';
-
 	public string $tokenUrl = "https://id.twitch.tv/oauth2/token";
 	public string $validationUrl = "https://id.twitch.tv/oauth2/validate";
 	public string $baseApiUrl = "https://api.twitch.tv/helix";
 	public string $twitchTeamUrl = "https://api.twitch.tv/helix/teams?name=";
 
-	public TwitchTeam $twitchTeam;
+	public ?TwitchTeam $twitchTeam;
 
 	function __construct() {
-		// TODO: Somehow store the current access token
-		if(!$this->isAccessTokenValid($this->accessToken)) {
-			$this->updateAccessToken();
+
+		if(!isset($_COOKIE["twitch_access_token"])){
+			$_COOKIE['twitch_access_token'] = 'null';
 		}
 
-		$this->twitchTeam = $this->getTwitchTeam("ageofqueens");
-		$this->twitchTeam->members = $this->getTwitchTeamMembers($this->twitchTeam->memberIds);
-
+		// We only try n times to get an access token
+		try {
+			for($i = 0; $i < 3; $i++){
+				if(!$this->isAccessTokenValid($_COOKIE["twitch_access_token"])) {
+					$accessToken = $this->getAccessToken();
+					setcookie('twitch_access_token', $accessToken);
+					$_COOKIE["twitch_access_token"] = $accessToken;
+					continue;
+				}
+				$this->twitchTeam = $this->getTwitchTeam("ageofqueens");
+				if($this->twitchTeam == null) return;
+				$this->twitchTeam->members = $this->getTwitchTeamMembers($this->twitchTeam->memberIds);
+			}
+		} catch(Exception $e){
+			error_log($e->getMessage());
+		}
 	}
 
 	function getTwitchTeam($teamName): ?TwitchTeam {
+
 		$request = Requests::get($this->twitchTeamUrl . $teamName, array(
-			'Authorization' => 'Bearer ' . $this->accessToken,
+			'Authorization' => 'Bearer ' . $_COOKIE["twitch_access_token"],
 			'Client-ID' => TWITCH_CLIENT_ID,
 			'Content-Type' => 'application/json'
 		));
@@ -32,7 +44,6 @@ class TwitchLoader {
 		if(!$request->success) return null;
 
 		$data = json_decode($request->body, true)['data'][0];
-		//$data = $arr['data'][0];
 
 		// Saving the Twitch team
 		$twitchTeam = new TwitchTeam($data['background_image_url'],
@@ -63,7 +74,7 @@ class TwitchLoader {
 		$url = "{$this->baseApiUrl}/users?{$query}";
 
 		$request = Requests::get($url, array(
-			'Authorization' => 'Bearer ' . $this->accessToken,
+			'Authorization' => 'Bearer ' . $_COOKIE["twitch_access_token"],
 			'Client-ID' => TWITCH_CLIENT_ID,
 			'Content-Type' => 'application/json'
 		));
@@ -90,30 +101,28 @@ class TwitchLoader {
 		return $members;
 	}
 
-	// TODO: Check what it returns if valid
 	function isAccessTokenValid($accessToken): bool {
+
 		if(empty($accessToken)) return false;
 
 		$request = Requests::post($this->validationUrl, array(
-			'Authorization' => 'Bearer ' . $this->accessToken,
+			'Authorization' => 'Bearer ' . $_COOKIE["twitch_access_token"],
 			'Content-Type' => 'application/json'
 		));
 
-		if(!$request->success) return false;
+		if(!$request->success) return true;
 		return false;
 	}
 
-	function updateAccessToken(): bool {
-		$url = $this->tokenUrl . '?client_id=' . TWITCH_CLIENT_ID . '&client_secret=' . TWITCH_CLIENT_SECRET . '&grant_type=client_credentials';
+	function getAccessToken(): string {
 
-		$request = Requests::post($url);
-
-		if(!$request->success) return false;
-
-		$data = json_decode($request->body, true);
-		$this->accessToken = $data["access_token"];
-		print_r($this->accessToken);
-		return true;
+		$request = Requests::post($this->tokenUrl . '?client_id=' . TWITCH_CLIENT_ID . '&client_secret=' . TWITCH_CLIENT_SECRET . '&grant_type=client_credentials');
+		if(!$request->success){
+			return false;
+		} else {
+			$data = json_decode($request->body, true);
+			return $data["access_token"];
+		}
 	}
 
 }

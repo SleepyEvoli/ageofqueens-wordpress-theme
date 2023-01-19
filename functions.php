@@ -92,7 +92,5 @@ class CustomBlock {
 }
 
 new CustomBlock('banner', true);
-new CustomBlock('heading');
-new CustomBlock('button');
 new CustomBlock('slideshow', true);
 new CustomBlock('slide', true);

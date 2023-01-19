@@ -1,37 +1,29 @@
 @import "./variables.scss";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "./custom-blocks.scss";
-@import "./components.scss";
-@import "./wp.scss";
 @import "./overrides.scss";
 @import "./bootstrap-overrides";
+
+
+
+.post-image {
+	img {
+		max-height: $default-image-max-height;
+		object-fit: cover;
+	}
+}
+
+.single-post-image {
+	width: fit-content;
+	img {
+		max-height: $default-image-max-height;
+		object-fit: contain;
+	}
+}
 
 .annotation {
 	font-size: 0.8rem;
 	opacity: .8;
-}
-
-/* TABLES */
-
-.table {
-	color: white;
-	border-color: $default-clickable-hover-color;
-	font-size: 1.2rem;
-	margin-top: 1rem;
-}
-
-.table-striped tbody tr:nth-of-type(odd) {
-	background-color: rgba(0,0,0,.12);
-	color: white;
-}
-
-.table-striped > tbody > tr:nth-of-type(odd) > * {
-	color: white;
-}
-
-.table-bordered td,
-.table-bordered th {
-	border: 1px solid $default-clickable-hover-color;
 }
 
 .clickable {
@@ -46,6 +38,9 @@
 .youtube-video {
 	text-align: center;
 	margin-top: 2rem;
+	max-width: 50rem;
+	border-radius: $default-border-radius-small;
+	overflow: hidden;
 }
 
 /* Posts */
@@ -69,7 +64,7 @@
 	border-radius: $default-border-radius-small;
 	padding: 1rem;
 
-	img {
+	&__thumbnail {
 		max-width: 12rem;
 		max-height: 18rem;
 	}
@@ -83,13 +78,14 @@
 		right: 1rem;
 		top: 1rem;
 
+		&__icon {
+			max-width: 32px;
+		}
+
 		a:not(:last-child) {
 			margin-right: 1rem;
 		}
 
-		a img {
-			max-width: 2rem;
-		}
 	}
 }
 
@@ -100,14 +96,13 @@
 	display: flex;
 	flex-flow: wrap;
 
-	img {
+	&__thumbnail {
 		aspect-ratio: 16/9;
 		width: 200px;
 		height: 100%;
 		margin: 1rem;
 		object-fit: cover;
 	}
-
 
 	&__content {
 		width: 80%;
@@ -120,7 +115,58 @@
 	}
 }
 
+.twitch-team__container {
 
+	&__banner {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		height: 170px;
+		object-fit: cover;
+	}
+
+	&__thumbnail {
+		width: 128px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: -2em;
+	}
+
+	&__name {
+		text-align: center;
+	}
+
+	&__info {
+		text-align: center;
+	}
+}
+
+.twitch-team__members {
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	&__member {
+
+		&__profile-image {
+			width: 128px;
+			border-radius: 0;
+			opacity: .3;
+			transition: opacity .5s;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+
+		&__name {
+			text-align: center;
+			display: none;
+		}
+	}
+}
 
 
 

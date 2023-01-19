@@ -1,8 +1,50 @@
-/* NAVIGATION TODO: CLEAN UP */
+.btn {
+	color: white;
+
+	&:hover {
+		color: unset;
+	}
+
+	&:focus {
+		box-shadow: unset;
+	}
+}
+
+.btn-primary {
+	background-color: $primary-color;
+	color: black;
+	border: none;
+	font-family: $default-button-font-family;
+
+	&:hover {
+		background-color: $primary-color;
+		font-weight: bold;
+		color: black;
+	}
+}
+
+.card {
+	background-color: $transparent-blue;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: $default-border-radius-small;
+	margin-top: 2rem;
+
+	img {
+		border-radius: 1rem 1rem 0 0;
+	}
+
+	&__title {
+		padding-top: 0;
+		padding-bottom: 0.2rem;
+	}
+}
 
 .navbar {
 	border-bottom: solid 1px $primary-color;
 	font-family: $default-nav-font-family;
+	padding-left: 2rem;
+	padding-right: 1rem;
 
 	& * {
 		color: $primary-color;
@@ -32,13 +74,8 @@
 
 .dropdown-menu {
 	background-color: $secondary-color;
-	font-size: 1rem;
-	padding: 0;
 	border-bottom: 2px solid $primary-color;
-
-	&:active {
-		//background-color: $default-font-color;
-	}
+	animation: heightAnim 3s ease-in-out 0s 1 normal forwards;
 }
 
 .dropdown-item{
