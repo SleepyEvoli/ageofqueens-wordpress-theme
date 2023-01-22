@@ -6,6 +6,25 @@
 
 
 
+.ageofqueens__card {
+	padding: 1rem;
+	border-radius: $default-border-radius-small;
+	max-width: 430px;
+	margin-bottom: 1rem;
+
+	&:hover {
+		filter: brightness(120%);
+		transition: filter .5s;
+	}
+
+	&__image {
+
+	}
+	&__content {
+
+	}
+}
+
 .post-image {
 	img {
 		max-height: $default-image-max-height;

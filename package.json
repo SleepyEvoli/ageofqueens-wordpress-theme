@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "wp-scripts build src/index.js custom-blocks/banner.js custom-blocks/slide.js custom-blocks/slideshow.js",
-    "dev": "wp-scripts build src/index.js custom-blocks/banner.js custom-blocks/slide.js custom-blocks/slideshow.js",
-    "watch": "wp-scripts start src/index.js custom-blocks/banner.js custom-blocks/slide.js custom-blocks/slideshow.js"
+    "build": "wp-scripts build src/index.js custom-blocks/banner.js custom-blocks/slide.js custom-blocks/slideshow.js custom-blocks/card.js",
+    "dev": "wp-scripts build src/index.js custom-blocks/banner.js custom-blocks/slide.js custom-blocks/slideshow.js custom-blocks/card.js",
+    "watch": "wp-scripts start src/index.js custom-blocks/banner.js custom-blocks/slide.js custom-blocks/slideshow.js custom-blocks/card.js"
   },
   "author": "",
   "license": "ISC",

@@ -94,3 +94,4 @@ class CustomBlock {
 new CustomBlock('banner', true);
 new CustomBlock('slideshow', true);
 new CustomBlock('slide', true);
+new CustomBlock('card', true);
