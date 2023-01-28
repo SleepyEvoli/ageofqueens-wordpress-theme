@@ -114,6 +114,7 @@
 	border-radius: $default-border-radius-small;
 	display: flex;
 	flex-flow: wrap;
+	align-items: center;
 
 	&__thumbnail {
 		aspect-ratio: 16/9;

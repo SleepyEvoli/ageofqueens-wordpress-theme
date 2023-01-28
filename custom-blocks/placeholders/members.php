@@ -9,10 +9,10 @@ if($query->have_posts()):
 	while($query->have_posts()):
 		$query->the_post();?>
 		<div class="member__item text-center text-md-start d-block d-md-flex">
-			<img alt="Member thumbnail" class="member__item__thumbnail" src="<?php echo get_the_post_thumbnail_url() ?>">
+			<img alt="Member thumbnail" class="member__item__thumbnail" src="<?php echo get_the_post_thumbnail_url() ?? '' ?>">
 			<div class="member__item__content">
-				<h2><?php echo get_the_title() ?></h2>
-				<p><?php echo get_the_content() ?></p>
+				<h2><?php echo get_the_title() ?? '' ?></h2>
+				<p><?php echo get_the_content() ?? '' ?></p>
 			</div>
 			<div class="member__item__social-icons d-none d-md-block">
 				<?php if(!empty(get_field('youtube'))):?>

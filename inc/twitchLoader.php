@@ -11,29 +11,34 @@ class TwitchLoader {
 
 	function __construct() {
 
+		$cache = get_transient('twitchTeam');
+		if($cache){
+			$this->twitchTeam = $cache;
+			return;
+		}
+
 		if(!isset($_COOKIE["twitch_access_token"])){
 			$_COOKIE['twitch_access_token'] = 'null';
 		}
 
 		// We only try n times to get an access token
 		try {
-			for($i = 0; $i < 3; $i++){
-				if(!$this->isAccessTokenValid($_COOKIE["twitch_access_token"])) {
-					$accessToken = $this->getAccessToken();
-					setcookie('twitch_access_token', $accessToken);
-					$_COOKIE["twitch_access_token"] = $accessToken;
-					continue;
-				}
-				$this->twitchTeam = $this->getTwitchTeam("ageofqueens");
-				if($this->twitchTeam == null) return;
-				$this->twitchTeam->members = $this->getTwitchTeamMembers($this->twitchTeam->memberIds);
+			if(!$this->isAccessTokenValid($_COOKIE["twitch_access_token"])) {
+				$accessToken = $this->getAccessToken();
+				setcookie('twitch_access_token', $accessToken);
+				$_COOKIE["twitch_access_token"] = $accessToken;
+			}
+			$this->twitchTeam = $this->fetchTwitchTeam("ageofqueens");
+			if($this->twitchTeam){
+				$this->twitchTeam->members = $this->fetchTwitchTeamMembers($this->twitchTeam->memberIds);
+				set_transient( 'twitchTeam', $this->twitchTeam, DAY_IN_SECONDS);
 			}
 		} catch(Exception $e){
 			error_log($e->getMessage());
 		}
 	}
 
-	function getTwitchTeam($teamName): ?TwitchTeam {
+	function fetchTwitchTeam($teamName): ?TwitchTeam {
 
 		$request = Requests::get($this->twitchTeamUrl . $teamName, array(
 			'Authorization' => 'Bearer ' . $_COOKIE["twitch_access_token"],
@@ -64,7 +69,7 @@ class TwitchLoader {
 		return $twitchTeam;
 	}
 
-	function getTwitchTeamMembers($ids):array {
+	function fetchTwitchTeamMembers($ids):array {
 
 		// Url structure must begin without & at the beginning
 		$query = $ids[0];
