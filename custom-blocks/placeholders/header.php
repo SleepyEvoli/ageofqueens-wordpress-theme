@@ -25,6 +25,9 @@
 					<a class="nav-link" href="/twitch-team">Twitch Team</a>
 				</li>
 				<li class="nav-item">
+					<a class="nav-link" href="/merch">Merch</a>
+				</li>
+				<li class="nav-item">
 					<a class="nav-link" href="/next-event">Next Event</a>
 				</li>
 			</ul>
