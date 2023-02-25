@@ -19,7 +19,6 @@ wp.blocks.registerBlockType("ageofqueenstheme/slide", {
 })
 
 function EditComponent(props){
-
 	useEffect(function(){
 		async function go(){
 			const res = await apiFetch({

@@ -27,8 +27,11 @@
 				<li class="nav-item">
 					<a class="nav-link" href="/merch">Merch</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="/next-event">Next Event</a>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Events</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item" href="/events/queens-clash-2">Queen's Clash 2</a>
+					</div>
 				</li>
 			</ul>
 		</div>

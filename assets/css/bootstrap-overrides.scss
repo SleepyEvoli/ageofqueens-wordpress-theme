@@ -94,3 +94,11 @@
 		width: 100%;
 	}
 }
+
+.border-bottom {
+	border-bottom: 1px solid $transparent-white-light !important;
+}
+
+.border-start {
+	border-left: 1px solid $transparent-white-light !important;
+}

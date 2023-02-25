@@ -18,7 +18,6 @@ wp.blocks.registerBlockType("ageofqueenstheme/banner", {
 })
 
 function EditComponent(props) {
-
     useEffect(function() {
         async function go() {
             const res = await apiFetch({
@@ -33,7 +32,6 @@ function EditComponent(props) {
     }, [ props.attributes.imgID ])
 
     function onFileSelect(x) {
-        //console.log(x) // Shows us what it gives us in the console
         props.setAttributes({ imgID: x.id })
     }
 

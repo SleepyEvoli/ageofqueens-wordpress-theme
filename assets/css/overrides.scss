@@ -11,6 +11,7 @@ a {
 
 	&:hover {
 		color: $default-font-color;
+		text-decoration: underline;
 	}
 }
 
@@ -35,5 +36,40 @@ footer {
 	p {
 		margin-bottom: unset;
 		text-align: center;
+	}
+}
+
+.wp-block-table {
+
+	thead {
+		border: unset !important;
+
+		tr {
+			background-color: unset !important;
+		}
+	}
+
+	tr {
+		border: unset !important;
+
+		&:nth-child(odd) {
+			background-color: $transparent-white-light;
+		}
+	}
+
+	th {
+		border-top: unset;
+		border-left: unset;
+		border-right: unset;
+		border-bottom: 1px solid $transparent-white !important;
+	}
+
+	td {
+		border-top: unset;
+		border-left: unset;
+		border-right: unset;
+		border-bottom: 1px solid $transparent-white !important;
+
+
 	}
 }
