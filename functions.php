@@ -123,6 +123,7 @@ new CustomPlaceholderBlock("members");
 new CustomPlaceholderBlock("twitch");
 new CustomPlaceholderBlock("mods");
 new CustomPlaceholderBlock("twitch-player");
+new CustomPlaceholderBlock("twitter-timeline");
 
 // Custom Block
 // Access to Node Modules and need to be compiled to one file

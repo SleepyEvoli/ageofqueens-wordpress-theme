@@ -90,11 +90,17 @@
 /* Third-Party */
 
 .youtube-video {
-	text-align: center;
 	margin-top: 2rem;
-	max-width: 50rem;
-	border-radius: $default-border-radius-small;
-	overflow: hidden;
+	border-radius: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.twitter-timeline {
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1rem;
 }
 
 /* Posts */
