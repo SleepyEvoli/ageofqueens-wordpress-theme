@@ -69,7 +69,7 @@ add_action('admin_menu', function(){
         'edit.php?post_type=events',
         'Event Games',
         'Event Games',
-        'manage_options',
+        'edit_posts',
         'edit.php?post_type=event-games',
         false
     );
