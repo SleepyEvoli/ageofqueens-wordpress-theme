@@ -10,5 +10,7 @@ function isYesCookieConsentGiven($cookieName = "cookieyes-consent"){
         } else {
             return false;
         }
+    } else {
+        return false;
     }
 }

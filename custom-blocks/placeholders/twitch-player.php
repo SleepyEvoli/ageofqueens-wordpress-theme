@@ -1,6 +1,6 @@
 <?php
 
-include(dirname(__FILE__).'/../../inc/cookieConsent.php');
+include_once(dirname(__FILE__).'/../../inc/cookieConsent.php');
 
 if(isYesCookieConsentGiven()):
 ?>
