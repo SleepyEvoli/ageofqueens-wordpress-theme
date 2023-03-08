@@ -8,7 +8,6 @@ if(isset($twitchLoader->twitchTeam)):?>
 		<img class="twitch-team__container__banner" src="<?php echo $twitchLoader->twitchTeam->bannerUrl ?? '' ?>" alt="Twitch team banner">
 		<img class="twitch-team__container__thumbnail" src="<?php echo $twitchLoader->twitchTeam->thumbnailUrl ?? ''  ?>" alt="Twitch team thumbnail"/>
 		<h1 class="twitch-team__container__name"><?php echo $twitchLoader->twitchTeam->teamDisplayName ?? '' ?></h1>
-		<p class="twitch-team__container__info"><?php echo $twitchLoader->twitchTeam->info ?? '' ?></p>
 	</div>
 
 	<div class="twitch-team__members">

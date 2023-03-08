@@ -39,9 +39,12 @@ footer {
 	}
 }
 
-.wp-block-table {
+table {
+
+	width: 100%;
 
 	thead {
+		font-size: 1.2rem;
 		border: unset !important;
 
 		tr {
@@ -69,7 +72,11 @@ footer {
 		border-left: unset;
 		border-right: unset;
 		border-bottom: 1px solid $transparent-white !important;
-
-
+		padding: 0.5rem;
 	}
+}
+
+.dropdown-menu {
+	padding-top: unset;
+	padding-bottom: unset;
 }

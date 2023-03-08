@@ -15,7 +15,6 @@
 					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 						<a class="dropdown-item" href="/what-is-ageofqueens">What is Age of Queens?</a>
 						<a class="dropdown-item" href="/members">Introductions</a>
-						<a class="dropdown-item" href="/past-events">Past Events</a>
 					</div>
 				</li>
 				<li class="nav-item">
@@ -31,6 +30,7 @@
 					<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Events</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 						<a class="dropdown-item" href="/events/queens-clash-2">Queen's Clash 2</a>
+						<a class="dropdown-item" href="/past-events">Past Events</a>
 					</div>
 				</li>
 			</ul>
