@@ -1,5 +1,7 @@
 <?php
 
+include_once(dirname(__FILE__).'/../inc/utils.php');
+
 $token = $attributes['token'];
 $heading = $attributes['heading'] ?? 'Undefined';
 
@@ -23,12 +25,6 @@ $currentAmount = $data['amount']['current'];
 $start = $data['amount']['start'];
 $target = $data['amount']['target'];
 $endDate = $data['to_go']['ends_at'];
-
-function getPercent($currValue, $maxValue){
-	if($currValue == 0) return 0;
-	$div = $currValue / $maxValue;
-	return intval(ceil($div * 100));
-}
 
 $percentage = getPercent($currentAmount, $target);
 
