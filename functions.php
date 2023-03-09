@@ -5,6 +5,7 @@ declare(strict_types=1);
 
 function ageofqueenstheme_scripts() {
 	wp_enqueue_script('bootstrap',get_stylesheet_directory_uri() . '/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js');
+    wp_enqueue_script('main-script',get_stylesheet_directory_uri() . '/build/index.js', null, null);
 	wp_enqueue_style( 'mainStyle', get_stylesheet_directory_uri() . '/build/style-index.css');
 }
 
@@ -154,3 +155,4 @@ new CustomBlock('slideshow', true);
 new CustomBlock('slide', true);
 new CustomBlock('card', true);
 new CustomBlock("event-games", true);
+new CustomBlock("streamlabs-donation-goal", true);

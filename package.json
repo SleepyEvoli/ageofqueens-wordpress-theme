@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "wp-scripts build src/index.js custom-blocks/banner.js custom-blocks/slide.js custom-blocks/slideshow.js custom-blocks/card.js custom-blocks/event-games.js",
-    "dev": "wp-scripts build src/index.js custom-blocks/banner.js custom-blocks/slide.js custom-blocks/slideshow.js custom-blocks/card.js custom-blocks/event-games.js",
-    "watch": "wp-scripts start src/index.js custom-blocks/banner.js custom-blocks/slide.js custom-blocks/slideshow.js custom-blocks/card.js custom-blocks/event-games.js"
+    "build": "wp-scripts build src/index.js custom-blocks/banner.js custom-blocks/slide.js custom-blocks/slideshow.js custom-blocks/card.js custom-blocks/event-games.js custom-blocks/streamlabs-donation-goal.js",
+    "dev": "wp-scripts build src/index.js custom-blocks/banner.js custom-blocks/slide.js custom-blocks/slideshow.js custom-blocks/card.js custom-blocks/event-games.js custom-blocks/streamlabs-donation-goal.js",
+    "watch": "wp-scripts start src/index.js custom-blocks/banner.js custom-blocks/slide.js custom-blocks/slideshow.js custom-blocks/card.js custom-blocks/event-games.js custom-blocks/streamlabs-donation-goal.js"
   },
   "author": "",
   "license": "ISC",

@@ -80,3 +80,55 @@
 	}
 }
 
+.streamlabs-donation-goal {
+
+	font-family: $default-button-font-family;
+
+	&__heading {
+		font-size: 2rem;
+		text-align: center;
+	}
+
+	&__bar {
+		border: 2px solid black;
+		border-radius: $default-border-radius-small;
+		background-color: $transparent-blue;
+		color: white;
+		text-shadow: 0 0 3px black, 0 0 3px black, 0 0 3px black, 0 0 3px black;
+		width: 100%;
+		position: relative;
+		height: 3rem;
+		overflow: hidden;
+
+		&__growing-bar{
+			width: 50%;
+			height: 100%;
+			background-color: $primary-color;
+			position: absolute;
+		}
+
+		&__stats{
+			font-size: 1.2rem;
+			font-weight: bold;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 0.5rem;
+
+			&__percentage{
+				font-size: 1.5rem;
+				z-index: 10;
+			}
+
+			&__current {
+				z-index: 10;
+			}
+
+			&__target {
+				z-index: 10;
+			}
+		}
+	}
+}
+
+
