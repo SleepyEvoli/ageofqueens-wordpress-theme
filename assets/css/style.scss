@@ -63,7 +63,7 @@
 .post-image {
 	img {
 		max-height: $default-image-max-height;
-		object-fit: cover;
+		object-fit: cover !important;
 	}
 }
 
