@@ -1,0 +1,82 @@
+body {
+	margin-bottom: 1rem;
+	background: linear-gradient(0deg, rgba(12, 11, 38, 1) 0%, rgba(102, 2, 60, 1) 100%) fixed;
+	font-family: $default-font-family;
+	color: $default-font-color;
+}
+
+a {
+	text-decoration: none;
+	color: $default-font-color;
+
+	&:hover {
+		color: $default-font-color;
+		text-decoration: underline;
+	}
+}
+
+h1, h2, h3, h4 {
+	border-bottom: 1px solid $default-border-color;
+	padding-bottom: 0.8rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+img {
+	border-radius: $default-border-radius-small;
+	max-width: 100%;
+}
+
+footer {
+
+	width: 100%;
+	line-height: 60px;
+	border-top: solid 1px $primary-color;
+
+	p {
+		margin-bottom: unset;
+		text-align: center;
+	}
+}
+
+table {
+
+	width: 100%;
+
+	thead {
+		font-size: 1.2rem;
+		border: unset !important;
+
+		tr {
+			background-color: unset !important;
+		}
+	}
+
+	tr {
+		border: unset !important;
+
+		&:nth-child(odd) {
+			background-color: $transparent-white-light;
+		}
+	}
+
+	th {
+		border-top: unset;
+		border-left: unset;
+		border-right: unset;
+		border-bottom: 1px solid $transparent-white !important;
+	}
+
+	td {
+		border-top: unset;
+		border-left: unset;
+		border-right: unset;
+		border-bottom: 1px solid $transparent-white !important;
+		padding: 0.5rem;
+	}
+}
+
+.dropdown-menu {
+	padding-top: unset;
+	padding-bottom: unset;
+}

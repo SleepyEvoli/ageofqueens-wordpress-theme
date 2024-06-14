@@ -1,0 +1,236 @@
+@import "./variables.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./custom-blocks.scss";
+@import "./overrides.scss";
+@import "./bootstrap-overrides";
+
+.event-main-heading {
+	border: unset;
+	font-size: 48px;
+	font-weight: bold;
+	text-shadow: 7px 7px 4px rgba(0, 0, 0, 0.25);
+}
+
+.event-heading {
+	border: unset;
+	font-weight: bold;
+	text-shadow: 7px 7px 4px rgba(0, 0, 0, 0.25);
+}
+
+.event-image {
+	height: auto;
+
+	img {
+		min-width: 15rem;
+	}
+}
+
+.event-card {
+	border: 2px solid white;
+	font-size: 16px;
+	padding: 1rem !important;
+	width: 100%;
+	margin-bottom: 1rem !important;
+
+	&__heading {
+		margin-bottom: unset;
+		border: unset;
+		font-size: 20px;
+		font-weight: bold;
+		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	}
+}
+
+.ageofqueens__card {
+	padding: 1rem;
+	border-radius: $default-border-radius-small;
+	max-width: 430px;
+	margin-bottom: 1rem;
+
+	&:hover {
+		filter: brightness(120%);
+		transition: filter .5s;
+	}
+
+	&__image {
+
+	}
+	&__content {
+
+	}
+}
+
+.post-image {
+	img {
+		max-height: $default-image-max-height;
+	}
+}
+
+.single-post-image {
+	width: fit-content;
+	img {
+		max-height: $default-image-max-height;
+		object-fit: contain;
+	}
+}
+
+.annotation {
+	font-size: 0.8rem;
+	opacity: .8;
+}
+
+.clickable {
+	&:hover {
+		cursor: pointer;
+		background-color: $default-clickable-hover-color !important; /* Overwrite bootstrap !important */
+	}
+}
+
+/* Third-Party */
+
+.youtube-video {
+	margin-top: 2rem;
+	border-radius: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.twitter-timeline {
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1rem;
+}
+
+/* Posts */
+
+#blogpost {
+	img {
+		display: block;
+		margin: 0 auto 1rem auto;
+	}
+}
+
+/* Player Introduction */
+
+.member__item {
+	align-items: center;
+	position: relative;
+	display: flex;
+	flex-wrap: nowrap;
+	margin: 1rem;
+	background-color: $transparent-blue;
+	border-radius: $default-border-radius-small;
+	padding: 1rem;
+
+	&__thumbnail {
+		max-width: 12rem;
+		max-height: 18rem;
+	}
+
+	&__content {
+		margin: 2rem;
+	}
+
+	&__social-icons {
+		position: absolute;
+		right: 1rem;
+		top: 1rem;
+
+		&__icon {
+			max-width: 32px;
+		}
+
+		a:not(:last-child) {
+			margin-right: 1rem;
+		}
+
+	}
+}
+
+.mod__item {
+	background-color: $transparent-blue;
+	margin: 2rem;
+	border-radius: $default-border-radius-small;
+	display: flex;
+	flex-flow: wrap;
+	align-items: center;
+
+	&__thumbnail {
+		aspect-ratio: 16/9;
+		width: 200px;
+		height: 100%;
+		margin: 1rem;
+		object-fit: cover;
+	}
+
+	&__content {
+		width: 80%;
+		margin-top: 1rem;
+
+		&__heading {
+			font-size: 1.3em;
+			font-weight: bold;
+		}
+	}
+}
+
+.twitch-team__container {
+
+	&__banner {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		height: 170px;
+		object-fit: cover;
+	}
+
+	&__thumbnail {
+		width: 128px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: -2em;
+	}
+
+	&__name {
+		text-align: center;
+	}
+
+	&__info {
+		text-align: center;
+	}
+}
+
+.twitch-team__members {
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	&__member {
+
+		&__profile-image {
+			width: 128px;
+			border-radius: 0;
+			opacity: .3;
+			transition: opacity .5s;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+
+		&__name {
+			text-align: center;
+			display: none;
+		}
+	}
+}
+
+
+
+
+
+
+
